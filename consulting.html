@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolución del Modelo de Consultoría: De Horas a Resultados</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f9ff;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 380px;
+            }
+        }
+        .kpi-card {
+            background-color: #0077B6;
+            color: white;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            text-align: center;
+        }
+        .kpi-number {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1;
+        }
+        .flowchart-step {
+            background-color: white;
+            border: 2px solid #90E0EF;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            flex-grow: 1;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .flowchart-arrow {
+            color: #0077B6;
+            font-size: 2rem;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <header class="text-center my-12">
+            <h1 class="text-4xl md:text-6xl font-black text-[#00446A] uppercase tracking-wide">La Evolución de la Consultoría</h1>
+            <p class="text-xl md:text-3xl font-bold text-[#0077B6] mt-4">De Horas Facturadas a Resultados Garantizados</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="bg-white rounded-lg shadow-xl p-8">
+                    <h2 class="text-3xl font-bold text-[#00446A] mb-4">El Paradigma Obsoleto: Tiempo y Materiales</h2>
+                    <p class="mb-6">El modelo tradicional de facturación por horas-hombre ha dominado la industria durante décadas. Sin embargo, este enfoque presenta fallas fundamentales: penaliza la eficiencia del consultor y desvía la atención del cliente del valor real obtenido hacia la tediosa revisión de hojas de tiempo. Se vende esfuerzo, no impacto.</p>
+                    <div class="chart-container">
+                        <canvas id="oldModelChart"></canvas>
+                    </div>
+                </div>
+                 <div class="bg-white rounded-lg shadow-xl p-8">
+                    <h2 class="text-3xl font-bold text-[#00446A] mb-4">El Futuro: Soluciones Basadas en Valor</h2>
+                    <p class="mb-6">El nuevo modelo se centra en un acuerdo sobre resultados de negocio concretos y medibles. En lugar de vender horas, la consultora vende un impacto cuantificable (aumento de ventas, ahorro de costos) por un precio fijo, convirtiéndose en un verdadero socio estratégico que comparte tanto los riesgos como los beneficios.</p>
+                    <div class="chart-container">
+                        <canvas id="newModelChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-[#00446A] text-white rounded-lg shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-center mb-8">El Proceso Basado en Resultados</h2>
+                <div class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-4">
+                    <div class="flowchart-step text-[#00446A]">
+                        <span class="text-2xl font-bold block">1</span>
+                        <p>Definir Objetivo de Negocio</p>
+                    </div>
+                    <div class="flowchart-arrow hidden md:block">&rarr;</div>
+                    <div class="flowchart-arrow md:hidden">&darr;</div>
+                    <div class="flowchart-step text-[#00446A]">
+                        <span class="text-2xl font-bold block">2</span>
+                        <p>Acordar KPIs Medibles</p>
+                    </div>
+                    <div class="flowchart-arrow hidden md:block">&rarr;</div>
+                     <div class="flowchart-arrow md:hidden">&darr;</div>
+                    <div class="flowchart-step text-[#00446A]">
+                        <span class="text-2xl font-bold block">3</span>
+                        <p>Ejecutar la Solución</p>
+                    </div>
+                    <div class="flowchart-arrow hidden md:block">&rarr;</div>
+                     <div class="flowchart-arrow md:hidden">&darr;</div>
+                    <div class="flowchart-step text-[#00446A]">
+                        <span class="text-2xl font-bold block">4</span>
+                        <p>Medir el Impacto</p>
+                    </div>
+                     <div class="flowchart-arrow hidden md:block">&rarr;</div>
+                     <div class="flowchart-arrow md:hidden">&darr;</div>
+                    <div class="flowchart-step text-[#00446A]">
+                        <span class="text-2xl font-bold block">5</span>
+                        <p>Compartir el Valor Generado</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <div class="text-center mb-10">
+                    <h2 class="text-4xl font-black text-[#00446A]">La IA como Acelerador del Cambio</h2>
+                    <p class="text-lg text-[#0077B6] mt-2 max-w-3xl mx-auto">La Inteligencia Artificial y la automatización no reemplazan a los consultores, sino que eliminan tareas de bajo valor. Esto permite a los equipos centrarse en la estrategia, la innovación y la entrega de soluciones de alto impacto de manera más rápida y eficiente.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg shadow-xl p-8 flex flex-col items-center">
+                         <h3 class="text-2xl font-bold text-[#00446A] mb-4 text-center">Aumento de Productividad con IA</h3>
+                         <p class="text-center mb-4">Un estudio del MIT Sloan reveló que los trabajadores calificados que utilizan IA generativa (como GPT-4) dentro de sus capacidades pueden mejorar su rendimiento drásticamente.</p>
+                        <div class="chart-container w-full max-w-sm">
+                            <canvas id="aiProductivityChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-xl p-8">
+                         <h3 class="text-2xl font-bold text-[#00446A] mb-4 text-center">Proyección de Inversión Tecnológica</h3>
+                         <p class="text-center mb-4">Gartner predice que para 2025, la Inteligencia Artificial será el principal motor de la inversión tecnológica a nivel mundial, lo que redefine las expectativas de los clientes y las capacidades de las consultoras.</p>
+                        <div class="chart-container">
+                            <canvas id="aiInvestmentChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="bg-white rounded-lg shadow-xl p-8">
+                <h2 class="text-4xl font-black text-center text-[#00446A] mb-2">Oportunidad para Consultoras de LATAM</h2>
+                <p class="text-lg text-[#0077B6] text-center mt-2 max-w-4xl mx-auto mb-8">Para las firmas latinoamericanas que atienden al mercado norteamericano, el cambio es una oportunidad única para pasar de competir por precio por hora a ofrecer soluciones integrales de alto valor, aprovechando el talento senior y la proximidad cultural.</p>
+                <div class="chart-container md:max-w-4xl">
+                     <canvas id="latamOpportunityChart"></canvas>
+                </div>
+            </section>
+
+            <section>
+                 <h2 class="text-4xl font-black text-center text-[#00446A] mb-8">Estrategias para la Adaptación</h2>
+                 <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+                     <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-[#00B4D8]">
+                        <h3 class="font-bold text-xl text-[#00446A] mb-2">✔ Desarrollar Ofertas Integrales</h3>
+                        <p>Empaquetar servicios (p.ej., migración completa de datos) con precios fijos y resultados definidos.</p>
+                     </div>
+                     <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-[#00B4D8]">
+                        <h3 class="font-bold text-xl text-[#00446A] mb-2">✔ Invertir en Capacitación de IA</h3>
+                        <p>Formar equipos que combinen la experiencia humana con herramientas de IA para acelerar las entregas.</p>
+                     </div>
+                     <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-[#00B4D8]">
+                        <h3 class="font-bold text-xl text-[#00446A] mb-2">✔ Iniciar con Proyectos Piloto</h3>
+                        <p>Ganar credibilidad y experiencia con proyectos pequeños de valor compartido (pago base + bono por éxito).</p>
+                     </div>
+                     <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-[#00B4D8]">
+                        <h3 class="font-bold text-xl text-[#00446A] mb-2">✔ Comunicar en Términos de Negocio</h3>
+                        <p>Enfocar la conversación con el cliente en el ROI y la solución a sus problemas, no en las horas invertidas.</p>
+                     </div>
+                 </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center mt-16 py-8 border-t-2 border-[#90E0EF]">
+            <p class="text-lg font-bold text-[#00446A]">El futuro de la consultoría no se mide en minutos, sino en resultados.</p>
+            <p class="text-[#0077B6] mt-2">El reloj está corriendo para el modelo antiguo. El futuro pertenece a quienes entregan valor, no solo tiempo.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const wrapLabel = (label, maxWidth) => {
+            if (typeof label !== 'string' || label.length <= maxWidth) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > maxWidth && currentLine.length > 0) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine.length > 0) {
+                lines.push(currentLine);
+            }
+            return lines;
+        };
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+
+        const brilliantBluesPalette = {
+            darkBlue: '#00446A',
+            midBlue: '#0077B6',
+            brightBlue: '#00B4D8',
+            lightBlue: '#90E0EF',
+            paleBlue: '#CAF0F8'
+        };
+
+        const defaultChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                    labels: {
+                        color: brilliantBluesPalette.darkBlue,
+                        font: {
+                            size: 14
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: { color: brilliantBluesPalette.midBlue },
+                    grid: { color: '#e0e0e0' }
+                },
+                x: {
+                    ticks: { color: brilliantBluesPalette.midBlue },
+                    grid: { display: false }
+                }
+            }
+        };
+        
+        const oldModelCtx = document.getElementById('oldModelChart').getContext('2d');
+        new Chart(oldModelCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Consultor Eficiente', 'Consultor Ineficiente'],
+                datasets: [{
+                    label: 'Horas Facturadas',
+                    data: [80, 160],
+                    backgroundColor: [brilliantBluesPalette.lightBlue, brilliantBluesPalette.brightBlue],
+                    borderColor: [brilliantBluesPalette.midBlue, brilliantBluesPalette.midBlue],
+                    borderWidth: 1
+                },
+                {
+                    label: 'Valor Entregado',
+                    data: [150, 90],
+                    backgroundColor: [brilliantBluesPalette.darkBlue, brilliantBluesPalette.darkBlue],
+                    borderColor: [brilliantBluesPalette.darkBlue, brilliantBluesPalette.darkBlue],
+                    borderWidth: 1
+                }]
+            },
+            options: defaultChartOptions
+        });
+
+        const newModelCtx = document.getElementById('newModelChart').getContext('2d');
+        new Chart(newModelCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Proyecto A (Rápido)', 'Proyecto B (Lento)'],
+                datasets: [
+                    {
+                        label: 'Costo Interno (Horas)',
+                        data: [40, 75],
+                        backgroundColor: brilliantBluesPalette.brightBlue,
+                        borderColor: brilliantBluesPalette.brightBlue,
+                        borderWidth: 1,
+                    },
+                    {
+                        label: 'Margen de Ganancia',
+                        data: [60, 25],
+                        backgroundColor: brilliantBluesPalette.darkBlue,
+                        borderColor: brilliantBluesPalette.darkBlue,
+                        borderWidth: 1,
+                    },
+                ]
+            },
+            options: { 
+                ...defaultChartOptions,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        stacked: true,
+                        ticks: { color: brilliantBluesPalette.midBlue },
+                        grid: { display: false }
+                    },
+                    y: {
+                        stacked: true,
+                        ticks: { color: brilliantBluesPalette.midBlue },
+                        grid: { color: '#e0e0e0' }
+                    }
+                },
+            }
+        });
+
+        const aiProductivityCtx = document.getElementById('aiProductivityChart').getContext('2d');
+        new Chart(aiProductivityCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Aumento de Productividad', 'Base'],
+                datasets: [{
+                    data: [40, 60],
+                    backgroundColor: [brilliantBluesPalette.darkBlue, brilliantBluesPalette.lightBlue],
+                    borderColor: '#ffffff',
+                    borderWidth: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '70%',
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                         callbacks: {
+                            title: tooltipTitleCallback,
+                            label: function(context) {
+                                let label = context.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed !== null) {
+                                    label += context.parsed + '%';
+                                }
+                                return label;
+                            }
+                        }
+                    },
+                    annotation: {
+                        annotations: {
+                            label1: {
+                                type: 'label',
+                                content: '+40%',
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        const aiInvestmentCtx = document.getElementById('aiInvestmentChart').getContext('2d');
+        new Chart(aiInvestmentCtx, {
+            type: 'line',
+            data: {
+                labels: ['2023', '2024', '2025', '2026', '2027 (Est.)'],
+                datasets: [{
+                    label: 'Inversión Global en IA (Billones USD)',
+                    data: [150, 180, 230, 300, 420],
+                    fill: true,
+                    backgroundColor: 'rgba(0, 180, 216, 0.2)',
+                    borderColor: brilliantBluesPalette.brightBlue,
+                    tension: 0.4
+                }]
+            },
+            options: defaultChartOptions
+        });
+        
+        const latamCtx = document.getElementById('latamOpportunityChart').getContext('2d');
+        const latamLabels = [
+            'Oferta Tradicional (Nearshore por Hora)', 
+            'Oferta Moderna (Solución por Valor)'
+        ].map(label => wrapLabel(label, 20));
+
+        new Chart(latamCtx, {
+            type: 'bar',
+            data: {
+                labels: latamLabels,
+                datasets: [
+                    {
+                        label: 'Ahorro de Costos',
+                        data: [60, 25],
+                        backgroundColor: brilliantBluesPalette.lightBlue,
+                    },
+                    {
+                        label: 'Habilidad Técnica',
+                        data: [40, 30],
+                        backgroundColor: brilliantBluesPalette.brightBlue,
+                    },
+                    {
+                        label: 'Socio Estratégico',
+                        data: [0, 25],
+                        backgroundColor: brilliantBluesPalette.midBlue,
+                    },
+                     {
+                        label: 'ROI Garantizado',
+                        data: [0, 20],
+                        backgroundColor: brilliantBluesPalette.darkBlue,
+                    }
+                ]
+            },
+            options: {
+                ...defaultChartOptions,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        stacked: true,
+                        ticks: { color: brilliantBluesPalette.midBlue },
+                        grid: { display: false }
+                    },
+                    y: {
+                        stacked: true,
+                        ticks: { color: brilliantBluesPalette.midBlue },
+                        grid: { color: '#e0e0e0' }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                           color: brilliantBluesPalette.darkBlue,
+                           font: { size: 12 }
+                        }
+                    },
+                    tooltip: {
+                         callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
